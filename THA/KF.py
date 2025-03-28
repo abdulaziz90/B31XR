@@ -30,7 +30,7 @@ M_0_0 = np.array([0, 0, 0, 0])  # Initial mean vector
 Sigma_0_0 = 1e2 * np.eye(4)
 
 M_t_tminus1[:, 0] = Q @ M_0_0
-Sigma_t_tminus1[:, :, 0] = Q.T @ Sigma_0_0 @ Q + R
+Sigma_t_tminus1[:, :, 0] = Q @ Sigma_0_0 @ Q.T + R
 
 # Main Kalman Filter loop
 for t in range(T):
